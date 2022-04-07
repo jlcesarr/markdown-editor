@@ -1,0 +1,7 @@
+{
+  "name": "in-browser-markdown-editor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Júlio César <74342193+jlcesarr@users.noreply.github.com>",
+  "license": "MIT"
+}
