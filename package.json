@@ -1,7 +1,22 @@
 {
-  "name": "in-browser-markdown-editor",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Júlio César <74342193+jlcesarr@users.noreply.github.com>",
-  "license": "MIT"
+    "name": "in-browser-markdown-editor",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "author": "Júlio César <74342193+jlcesarr@users.noreply.github.com>",
+    "scripts": {
+        "gulp": "node_modules/gulp-cli/bin/gulp.js"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "browser-sync": "^2.27.9",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-cli": "^2.3.0",
+        "svgo": "^2.8.0",
+        "webpack": "^5.72.0",
+        "webpack-stream": "^7.0.0",
+        "gulp-concat": "^2.6.1"
+    },
+    "dependencies": {}
 }
