@@ -1,33 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Frontend Mentor | In-browser markdown editor</title>
 </head>
 
 <body>
-    <!-- Sidebar start -->
 
-    My Documents New Document
+    <div class="grid-wrapper">
+        <header class="header">
+            <div class="header-container flex align-center space-between">
+                <div class="header-item flex align-center">
+                    <div class="menu-button"></div>
+                    <figure class="menu-icon">
+                        <img class="menu-open" src="assets/svg/icon-menu.svg" alt="Close Icon" onload="SVGInject(this)" />
+                        <img class="menu-close" src="assets/svg/icon-close.svg" alt="Close Icon" onload="SVGInject(this)" />
+                    </figure>
+                    <img src="assets/svg/logo.svg" onload="SVGInject(this)" alt="Logo">
 
-    <!-- Sidebar end -->
 
-    <!-- Header start -->
 
-    Document Name Save Changes
+                    <div class="document flex align-center">
+                        <img class="document-icon" src="assets/svg/icon-document.svg" alt="File Icon">
 
-    <!-- Header end -->
+                        <div class="document-info">
+                            <span class="document-name">Document Name</span>
+                            <input type="text" spellcheck="false" class="document-filename" placeholder="welcome.md" value="welcome.md" />
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Main start -->
 
-    Markdown Preview
+                <div class="document-actions flex align-center">
+                    <button class="btn delete-btn">
+                    <img src="assets/svg/icon-delete.svg" onload="SVGInject(this)" alt="">
 
-    <!-- Main end -->
+                    </button>
+                    <button class="btn save-btn">
+                        <img class="save-icon" src="assets/svg/icon-save.svg" >
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </header>
+
+
+        <aside class="sidebar flex">
+            <h1 class="sidebar-title">My Documents</h1>
+
+            <button class="btn new-btn">
+               New Document
+            </button>
+
+            <ul class="documents-list flex flex-column">
+                <li class="document-item">
+                    <img class="document-icon" src="assets/svg/icon-document.svg" alt="File Icon">
+                    <div class="document-details">
+                        <span class="document-date">01 April 2022</span>
+                        <span class="document-filename">untitled-document.md</span>
+                    </div>
+                </li>
+                <li class="document-item">
+                    <img class="document-icon" src="assets/svg/icon-document.svg" alt="File Icon">
+                    <div class="document-details">
+                        <span class="document-date">01 April 2022</span>
+                        <span class="document-filename">welcome.md</span>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="theme">
+                <div class="theme-switcher">
+                    <img src="assets/svg/icon-light-mode.svg" alt="">
+                    <label class="switcher">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                    <img src="assets/svg/icon-dark-mode.svg" alt="">
+                </div>
+            </div>
+        </aside>
+
+        <main class="editor ">
+            <div class="editor-content">
+                <div class="editor-heading flex align-center border-right">
+                    <h2 class="editor-title">Markdown</h2>
+                </div>
+                <textarea class="markdown-content" spellcheck="false"></textarea>
+            </div>
+
+            <div class="editor-preview">
+                <div class="editor-heading flex align-center space-between">
+                    <h2 class="editor-title">Preview</h2>
+                    <button class="btn show-btn">
+                        <img src="assets/svg/icon-show-preview.svg" onload="SVGInject(this)" alt="">
+                    </button>
+                </div>
+                <div class="markdown-preview">
+                    <!-- INJECT PARSED MARKDOWN HERE -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-title">Delete this document?</div>
+
+            <p class="modal-message">Are you sure you want to delete ‘welcome.md’ document and its contents? This action cannot be reversed.</p>
+
+            <button class="btn close-modal-btn">Confirm & Delete</button>
+        </div>
+    </div>
+
+
+    <script src="assets/js/scripts/svg-inject.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,79 @@
+.btn {
+    color: white;
+    @include typeface-regular(15);
+    font-weight: lighter;
+    padding: 10px;
+    max-width: 152px;
+    // width: 100%;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.new-btn {
+    background-color: $auxiliary-tertiary;
+    transition: .3s ease;
+    max-width: unset;
+    width: 100%;
+    &::before {
+        content: "+";
+        display: inline-block;
+        margin-right: 4px;
+    }
+    &:hover {
+        background-color: transparentize($auxiliary-quaternary, .3)
+    }
+}
+
+.save-btn {
+    background-color: $auxiliary-tertiary;
+    transition: .3s ease;
+    &:hover {
+        background-color: transparentize($auxiliary-quaternary, .3)
+    }
+    min-width: 152px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    .save-icon {
+        margin-right: 8px;
+    }
+}
+
+.delete-btn {
+    padding: 5px;
+    background-color: transparent;
+    path {
+        transition: .3s ease;
+    }
+    &:hover {
+        path {
+            fill: $auxiliary-tertiary;
+        }
+    }
+}
+
+.show-btn {
+    padding: 0 5px;
+    background-color: transparent;
+    path {
+        transition: .3s ease;
+    }
+    &:hover {
+        path {
+            fill: $auxiliary-tertiary;
+        }
+    }
+}
+
+.close-modal-btn {
+    background-color: $auxiliary-tertiary;
+    transition: .3s ease;
+    max-width: unset;
+    width: 100%;
+    font-weight: 500;
+    &:hover {
+        background-color: transparentize($auxiliary-quaternary, .3)
+    }
+}

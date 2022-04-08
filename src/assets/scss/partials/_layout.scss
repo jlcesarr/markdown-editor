@@ -1,0 +1,225 @@
+body {
+    // overflow: hidden;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'header' 'editor';
+    .header {
+        grid-area: header;
+    }
+    .sidebar {
+        grid-area: aside;
+        display: none
+    }
+    .editor {
+        grid-area: editor;
+    }
+    &.menu-active {
+        .sidebar {
+            display: flex;
+        }
+        grid-template-columns: 250px 1fr;
+        grid-template-areas: 'aside header' 'aside editor';
+        .menu-icon {
+            .menu-open {
+                display: none;
+            }
+            .menu-close {
+                display: block;
+            }
+        }
+        .save-btn,
+        .delete-btn {
+            display: none;
+        }
+    }
+}
+
+// HEADER
+.header {
+    background-color: $primary-normal;
+    padding: 22px;
+    position: relative;
+    .menu-button {
+        background-color: $primary-light;
+        display: block;
+        position: absolute;
+        inset: 0;
+        cursor: pointer;
+        width: 72px;
+        transition: .3s ease;
+        &:hover {
+            background-color: $auxiliary-quaternary
+        }
+    }
+}
+
+.header-item {
+    .menu-icon {
+        display: block;
+        z-index: 999;
+        pointer-events: none;
+        margin-right: 32px;
+        .menu-close {
+            display: none;
+        }
+    }
+}
+
+.document {
+    &::before {
+        content: "";
+        align-self: stretch;
+        width: 1px;
+        background-color: $secondary-darkness;
+        margin-left: 24px;
+        margin-right: 24px;
+        display: inline-block;
+    }
+    .document-icon {
+        margin-right: 16px;
+    }
+}
+
+.document-info {
+    flex-grow: 1;
+    max-width: 400px;
+    width: 100%;
+    max-height: 36px;
+    .document-filename {
+        color: $auxiliary-secondary;
+        display: block;
+        border: none;
+        caret-color: $auxiliary-quaternary;
+        background: transparent;
+        padding: 0 0 5px 0;
+        width: 100%;
+        position: relative;
+        &:focus,
+        &:active {
+            outline: none;
+            border: none;
+            border-bottom: 1px solid $auxiliary-secondary;
+        }
+    }
+}
+
+.document-name,
+.document-filename,
+.document-date {
+    @include typeface-regular(15)
+}
+
+.document-name {
+    color: $secondary-dark;
+    font-weight: lighter;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.document-actions {
+    .save-btn {
+        margin-left: 16px;
+    }
+}
+
+// MAIN CONTENT - EDITOR
+.editor {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    align-content: start;
+    &.preview-mode {
+        grid-template-columns: 1fr;
+        .editor-content {
+            display: none;
+        }
+    }
+}
+
+.editor-content,
+.editor-preview {
+    background-color: $primary-darkness;
+}
+
+.editor-heading {
+    padding: 8px 0;
+    height: 42px;
+    background-color: $primary-dark;
+    .editor-title {
+        @include typeface-regular(13);
+        margin-left: 16px;
+        text-transform: uppercase;
+        color: $secondary-normal;
+    }
+    &.border-right {
+        border-right: 1px solid $secondary-darkness;
+    }
+}
+
+textarea.markdown-content {
+    width: 100%;
+    height: 90%;
+    outline: none;
+    overflow-y: auto;
+    background-color: inherit;
+    resize: none;
+    overflow-y: auto;
+    border: none;
+    border-right: 1px solid $secondary-darkness;
+    color: $secondary-normal;
+    padding: 8px;
+    @include typeface-paragraph()
+}
+
+div.markdown-preview {
+    height: 90%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+// sidebar
+.sidebar {
+    background-color: $primary-dark;
+    padding: 16px;
+    flex-direction: column;
+    .sidebar-title {
+        @include typeface-regular(15);
+        color: $secondary-dark;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+    }
+    .new-btn {
+        margin-bottom: 24px;
+    }
+}
+
+.documents-list {
+    li.document-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+        img {
+            margin-right: 16px;
+        }
+        .document-details {
+            span {
+                display: block;
+            }
+            .document-date {
+                color: $secondary-dark;
+            }
+            .document-filename {
+                color: $auxiliary-secondary;
+                cursor: pointer;
+                transition: .3s ease;
+                &:hover {
+                    color: $auxiliary-tertiary;
+                }
+            }
+        }
+    }
+}

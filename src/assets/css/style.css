@@ -1,2 +1,604 @@
+/* line 1, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_generics.scss */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 
-/*# sourceMappingURL=style.css.map */
+/* line 5, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_generics.scss */
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+/* line 9, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_generics.scss */
+.align-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* line 13, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_generics.scss */
+.justify-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/* line 17, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_generics.scss */
+.space-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+/* line 5, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.grid-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 'header' 'editor';
+}
+
+/* line 9, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.grid-wrapper .header {
+  grid-area: header;
+}
+
+/* line 12, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.grid-wrapper .sidebar {
+  grid-area: aside;
+  display: none;
+}
+
+/* line 16, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.grid-wrapper .editor {
+  grid-area: editor;
+}
+
+/* line 19, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.grid-wrapper.menu-active {
+  grid-template-columns: 250px 1fr;
+  grid-template-areas: 'aside header' 'aside editor';
+}
+
+/* line 20, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.grid-wrapper.menu-active .sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 26, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.grid-wrapper.menu-active .menu-icon .menu-open {
+  display: none;
+}
+
+/* line 29, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.grid-wrapper.menu-active .menu-icon .menu-close {
+  display: block;
+}
+
+/* line 33, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.grid-wrapper.menu-active .save-btn,
+.grid-wrapper.menu-active .delete-btn {
+  display: none;
+}
+
+/* line 41, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.header {
+  background-color: #2b2d31;
+  padding: 22px;
+  position: relative;
+}
+
+/* line 45, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.header .menu-button {
+  background-color: #35393F;
+  display: block;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  width: 72px;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+}
+
+/* line 53, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.header .menu-button:hover {
+  background-color: #f39765;
+}
+
+/* line 60, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.header-item .menu-icon {
+  display: block;
+  z-index: 999;
+  pointer-events: none;
+  margin-right: 32px;
+}
+
+/* line 65, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.header-item .menu-icon .menu-close {
+  display: none;
+}
+
+/* line 72, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.document::before {
+  content: "";
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 1px;
+  background-color: #5a6069;
+  margin-left: 24px;
+  margin-right: 24px;
+  display: inline-block;
+}
+
+/* line 81, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.document .document-icon {
+  margin-right: 16px;
+}
+
+/* line 86, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.document-info {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 400px;
+  width: 100%;
+  max-height: 36px;
+}
+
+/* line 91, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.document-info .document-filename {
+  color: #FFF;
+  display: block;
+  border: none;
+  caret-color: #f39765;
+  background: transparent;
+  padding: 0 0 5px 0;
+  width: 100%;
+  position: relative;
+}
+
+/* line 100, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.document-info .document-filename:focus, .document-info .document-filename:active {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #FFF;
+}
+
+/* line 109, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.document-name,
+.document-filename,
+.document-date {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+
+/* line 115, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.document-name {
+  color: #7c8187;
+  font-weight: lighter;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* line 123, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.document-actions .save-btn {
+  margin-left: 16px;
+}
+
+/* line 129, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.editor {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  -ms-flex-line-pack: start;
+  align-content: start;
+}
+
+/* line 135, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.editor.preview-mode {
+  grid-template-columns: 1fr;
+}
+
+/* line 137, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.editor.preview-mode .editor-content {
+  display: none;
+}
+
+/* line 143, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.editor-content,
+.editor-preview {
+  background-color: #151619;
+}
+
+/* line 148, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.editor-heading {
+  padding: 8px 0;
+  height: 42px;
+  background-color: #1d1f22;
+}
+
+/* line 152, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.editor-heading .editor-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-left: 16px;
+  text-transform: uppercase;
+  color: #c1c4cb;
+}
+
+/* line 158, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.editor-heading.border-right {
+  border-right: 1px solid #5a6069;
+}
+
+/* line 163, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+textarea.markdown-content {
+  width: 100%;
+  height: 90%;
+  outline: none;
+  overflow-y: auto;
+  background-color: inherit;
+  resize: none;
+  overflow-y: auto;
+  border: none;
+  border-right: 1px solid #5a6069;
+  color: #c1c4cb;
+  padding: 8px;
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+/* line 178, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+div.markdown-preview {
+  height: 90%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* line 185, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.sidebar {
+  background-color: #1d1f22;
+  padding: 16px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+/* line 189, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.sidebar .sidebar-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  color: #7c8187;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+/* line 195, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.sidebar .new-btn {
+  margin-bottom: 24px;
+}
+
+/* line 201, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.documents-list li.document-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* line 205, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.documents-list li.document-item img {
+  margin-right: 16px;
+}
+
+/* line 209, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.documents-list li.document-item .document-details span {
+  display: block;
+}
+
+/* line 212, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.documents-list li.document-item .document-details .document-date {
+  color: #7c8187;
+}
+
+/* line 215, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.documents-list li.document-item .document-details .document-filename {
+  color: #FFF;
+  cursor: pointer;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+}
+
+/* line 219, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.documents-list li.document-item .document-details .document-filename:hover {
+  color: #e46643;
+}
+
+/* line 2, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+.theme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+/* line 8, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+.theme-switcher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 18px;
+}
+
+/* line 14, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+.switcher {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+/* line 19, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+.switcher input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* line 25, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+.switcher input:checked + .slider::before {
+  -webkit-transform: translate(28px, -50%);
+  -ms-transform: translate(28px, -50%);
+  transform: translate(28px, -50%);
+}
+
+/* line 31, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+.switcher .slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #5a6069;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
+  border-radius: 14px;
+}
+
+/* line 38, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+.switcher .slider::before {
+  position: absolute;
+  content: '';
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+/* line 1, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.btn {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: lighter;
+  padding: 10px;
+  max-width: 152px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+/* line 14, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.new-btn {
+  background-color: #e46643;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+  max-width: unset;
+  width: 100%;
+}
+
+/* line 19, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.new-btn::before {
+  content: "+";
+  display: inline-block;
+  margin-right: 4px;
+}
+
+/* line 24, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.new-btn:hover {
+  background-color: rgba(243, 151, 101, 0.7);
+}
+
+/* line 29, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.save-btn {
+  background-color: #e46643;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+  min-width: 152px;
+  font-weight: bolder;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* line 32, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.save-btn:hover {
+  background-color: rgba(243, 151, 101, 0.7);
+}
+
+/* line 39, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.save-btn .save-icon {
+  margin-right: 8px;
+}
+
+/* line 44, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.delete-btn {
+  padding: 5px;
+  background-color: transparent;
+}
+
+/* line 47, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.delete-btn path {
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+}
+
+/* line 51, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.delete-btn:hover path {
+  fill: #e46643;
+}
+
+/* line 57, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.show-btn {
+  padding: 0 5px;
+  background-color: transparent;
+}
+
+/* line 60, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.show-btn path {
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+}
+
+/* line 64, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.show-btn:hover path {
+  fill: #e46643;
+}
+
+/* line 70, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.close-modal-btn {
+  background-color: #e46643;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+  max-width: unset;
+  width: 100%;
+  font-weight: 500;
+}
+
+/* line 76, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
+.close-modal-btn:hover {
+  background-color: rgba(243, 151, 101, 0.7);
+}
+
+/* line 1, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_modal.scss */
+.modal-overlay {
+  background-color: rgba(124, 129, 135, 0.3);
+  inset: 0;
+  position: absolute;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* line 11, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_modal.scss */
+.modal-overlay.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* line 17, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_modal.scss */
+.modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 348px;
+  padding: 24px;
+  background-color: #1D1F22;
+  border-radius: 4px;
+}
+
+/* line 24, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_modal.scss */
+.modal-content .modal-title {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFF;
+}
+
+/* line 28, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_modal.scss */
+.modal-content .modal-message {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #e46643;
+  color: #C1C4CB;
+  font-weight: lighter;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+/* line 9, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 15, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
+.grid-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* line 20, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
+img {
+  display: block;
+}
+
+/* line 24, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
+ul,
+ol {
+  list-style: none;
+}

@@ -1,3 +1,0 @@
-@function to-rem($pixels, $base: 16) {
-    @return ($pixels / $base)+rem;
-}

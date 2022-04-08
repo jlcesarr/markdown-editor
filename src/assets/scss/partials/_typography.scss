@@ -1,0 +1,65 @@
+$font-family-1: 'Roboto',
+sans-serif;
+$font-family-2: 'Roboto Slab',
+sans-serif;
+$font-family-3: 'Roboto Mono',
+sans-serif;
+@mixin typeface-regular($size) {
+    font-family: $font-family-1;
+    @if($size==15) {
+        font-size: 15px;
+    }
+    @else if($size==13) {
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+}
+
+@mixin typeface-slab($size) {
+    font-family: $font-family-2;
+    @if($size==32) {
+        font-size: 32px;
+        font-weight: bold;
+    }
+    @else if($size==28px) {
+        font-size: 28px;
+        font-weight: lighter;
+    }
+    @else if($size==24px) {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    @else if($size==20px) {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    @else if($size==16px) {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    @else if($size==15px) {
+        font-size: 15px;
+        font-weight: bold;
+        color: $auxiliary-tertiary;
+    }
+    @else if($size==14px) {
+        font-size: 14px;
+        font-weight: bold;
+        color: $auxiliary-tertiary;
+    }
+}
+
+@mixin typeface-paragraph($bold: 0) {
+    font-family: $font-family-2;
+    line-height: 24px;
+    font-size: 14px;
+    @if($bold !=0) {
+        font-weight: bold;
+    }
+}
+
+@mixin typeface-mono($size) {
+    font-family: $font-family-3;
+    line-height: 24px;
+    font-size: 14px;
+}

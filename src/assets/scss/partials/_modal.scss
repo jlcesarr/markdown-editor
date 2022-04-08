@@ -1,0 +1,35 @@
+.modal-overlay {
+    background-color: rgba(#7C8187, .3);
+    inset: 0;
+    position: absolute;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    &.is-active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 348px;
+    padding: 24px;
+    background-color: #1D1F22;
+    border-radius: 4px;
+    .modal-title {
+        @include typeface-slab(20);
+        color: $auxiliary-secondary;
+    }
+    .modal-message {
+        @include typeface-slab(14);
+        color: #C1C4CB;
+        font-weight: lighter;
+        margin-top: 32px;
+        margin-bottom: 24px;
+    }
+}
