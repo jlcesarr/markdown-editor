@@ -10,10 +10,10 @@ const liveBrowserSync = browserSync.create()
 function addPrefix() {
     return gulp.src('src/assets/css/*.css')
         .pipe(autoprefixer({
-            cascade: false
+            cascade: false,
         }))
         .pipe(liveBrowserSync.stream())
-        .pipe(gulp.dest('src/assets/css'))
+        .pipe(gulp.dest('src/assets/css/'))
 }
 gulp.task('autoPrefix', addPrefix)
 
@@ -50,4 +50,4 @@ function observers() {
     return;
 }
 
-gulp.task('default', gulp.parallel('liveBrowser', 'autoPrefix', 'loadJS', observers))
+gulp.task('default', gulp.parallel('liveBrowser', observers))
