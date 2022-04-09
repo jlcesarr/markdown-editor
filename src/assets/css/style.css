@@ -333,29 +333,32 @@ code.hljs {
 /* line 144, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .editor-content {
   min-height: 100%;
-  overflow-y: scroll;
 }
 
-/* line 154, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 148, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.editor-content,
+.editor-preview {
+  overflow-y: hidden;
+}
+
+/* line 153, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .editor-heading {
   padding: 8px 0;
   height: 42px;
   background-color: #1d1f22;
-  position: sticky;
-  inset: 0;
 }
 
-/* line 160, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 159, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .editor-heading .markdown-toggle {
   margin-right: 16px;
 }
 
-/* line 163, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 162, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .editor-heading input[type="checkbox"]:checked + .slider {
   background-color: green;
 }
 
-/* line 166, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 165, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .editor-heading .editor-title {
   font-family: "Roboto", sans-serif;
   font-size: 13px;
@@ -365,20 +368,18 @@ code.hljs {
   color: #c1c4cb;
 }
 
-/* line 174, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 173, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .border-right {
   border-right: 1px solid #5a6069;
 }
 
-/* line 178, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 177, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 textarea.markdown-content {
   width: 100%;
   height: 100%;
   outline: none;
-  overflow-y: auto;
   background-color: inherit;
   resize: none;
-  overflow-y: auto;
   border: none;
   border-right: 1px solid #5a6069;
   color: #c1c4cb;
@@ -388,7 +389,7 @@ textarea.markdown-content {
   font-size: 14px;
 }
 
-/* line 193, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 190, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 div.markdown-preview {
   min-height: 100%;
   width: 100%;
@@ -396,17 +397,14 @@ div.markdown-preview {
   padding: 8px;
 }
 
-/* line 201, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 198, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .sidebar {
   background-color: #1d1f22;
   padding: 16px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  position: relative;
 }
 
-/* line 205, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 202, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .sidebar .sidebar-title {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
@@ -415,12 +413,18 @@ div.markdown-preview {
   margin-bottom: 32px;
 }
 
-/* line 211, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 208, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .sidebar .new-btn {
   margin-bottom: 24px;
 }
 
-/* line 217, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 211, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.sidebar .fixed-container {
+  position: fixed;
+  height: 100%;
+}
+
+/* line 218, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -431,22 +435,22 @@ div.markdown-preview {
   margin-bottom: 24px;
 }
 
-/* line 221, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 222, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item img {
   margin-right: 16px;
 }
 
-/* line 225, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 226, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item .document-details span {
   display: block;
 }
 
-/* line 228, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 229, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item .document-details .document-date {
   color: #7c8187;
 }
 
-/* line 231, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 232, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item .document-details .document-filename {
   color: #FFF;
   cursor: pointer;
@@ -455,17 +459,17 @@ div.markdown-preview {
   transition: .3s ease;
 }
 
-/* line 235, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 236, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item .document-details .document-filename:hover {
   color: #e46643;
 }
 
-/* line 244, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 245, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .markdown-preview {
   color: #FFF;
 }
 
-/* line 246, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 247, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .markdown-preview p {
   font-family: "Roboto Slab", sans-serif;
   line-height: 24px;
@@ -473,42 +477,42 @@ div.markdown-preview {
   color: #c1c4cb;
 }
 
-/* line 250, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 251, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .markdown-preview h1 {
   font-family: "Roboto Slab", sans-serif;
   font-size: 32px;
   font-weight: bold;
 }
 
-/* line 253, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 254, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .markdown-preview h2 {
   font-family: "Roboto Slab", sans-serif;
   font-size: 28px;
   font-weight: lighter;
 }
 
-/* line 256, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 257, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .markdown-preview h3 {
   font-family: "Roboto Slab", sans-serif;
   font-size: 24px;
   font-weight: bold;
 }
 
-/* line 259, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 260, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .markdown-preview h4 {
   font-family: "Roboto Slab", sans-serif;
   font-size: 20px;
   font-weight: bold;
 }
 
-/* line 262, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 263, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .markdown-preview h5 {
   font-family: "Roboto Slab", sans-serif;
   font-size: 16px;
   font-weight: bold;
 }
 
-/* line 265, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 266, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .markdown-preview h6 {
   color: #e46643 !important;
   font-family: "Roboto Slab", sans-serif;
@@ -517,7 +521,7 @@ div.markdown-preview {
   color: #e46643;
 }
 
-/* line 269, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 270, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .markdown-preview strong,
 .markdown-preview b {
   color: #c1c4cb;
@@ -529,18 +533,11 @@ div.markdown-preview {
 
 /* line 1, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .theme {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 0px;
-  flex: 1 1 0;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+  position: fixed;
+  bottom: 16px;
 }
 
-/* line 7, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 6, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .theme-switcher {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -551,7 +548,7 @@ div.markdown-preview {
   gap: 18px;
 }
 
-/* line 13, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 12, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .switcher {
   position: relative;
   display: inline-block;
@@ -559,21 +556,21 @@ div.markdown-preview {
   height: 24px;
 }
 
-/* line 18, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 17, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .switcher input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* line 24, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 23, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .switcher input:checked + .slider::before {
   -webkit-transform: translate(28px, -50%);
   -ms-transform: translate(28px, -50%);
   transform: translate(28px, -50%);
 }
 
-/* line 30, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 29, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .switcher .slider {
   position: absolute;
   cursor: pointer;
@@ -585,7 +582,7 @@ div.markdown-preview {
   border-radius: 14px;
 }
 
-/* line 37, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 36, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .switcher .slider::before {
   position: absolute;
   content: '';
@@ -603,64 +600,64 @@ div.markdown-preview {
   transform: translate(0, -50%);
 }
 
-/* line 53, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 52, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 body.light-theme .editor {
   background-color: #FFF;
 }
 
-/* line 55, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 54, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 body.light-theme .editor .border-right {
   border-right: 1px solid #e4e4e4 !important;
 }
 
-/* line 58, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 57, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 body.light-theme .editor .markdown-content {
   color: #35393F;
 }
 
-/* line 63, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 62, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 body.light-theme .markdown-preview > * {
   color: #35393F;
 }
 
-/* line 66, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 65, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 body.light-theme .markdown-preview p {
   color: #7c8187;
 }
 
-/* line 69, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 68, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 body.light-theme .markdown-preview b,
 body.light-theme .markdown-preview strong {
   color: #7c8187;
 }
 
-/* line 74, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 73, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 body.light-theme .editor-heading {
   background-color: #f5f5f5;
 }
 
-/* line 76, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 75, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 body.light-theme .editor-heading .editor-title,
 body.light-theme .editor-heading svg {
   color: #7c8187;
 }
 
-/* line 81, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 80, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 body.light-theme .modal-content {
   background-color: #FFF;
 }
 
-/* line 83, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 82, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 body.light-theme .modal-content .modal-title {
   color: #35393F;
 }
 
-/* line 86, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 85, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 body.light-theme .modal-content .modal-message {
   color: #7c8187;
 }
 
-/* line 93, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 92, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .active-theme path {
   fill: white;
 }

@@ -57,44 +57,46 @@
 
 
         <aside class="sidebar flex">
-            <h1 class="sidebar-title">My Documents</h1>
+            <div class="fixed-container flex flex-column">
+                <h1 class="sidebar-title">My Documents</h1>
 
-            <button class="btn new-btn">
-               New Document
-            </button>
+                <button class="btn new-btn">
+                   New Document
+                </button>
 
-            <ul class="documents-list flex flex-column">
-                <li class="document-item">
-                    <img class="document-icon" src="assets/svg/icon-document.svg" alt="File Icon">
-                    <div class="document-details">
-                        <span class="document-date">01 April 2022</span>
-                        <span class="document-filename">untitled-document.md</span>
+                <ul class="documents-list flex flex-column">
+                    <li class="document-item">
+                        <img class="document-icon" src="assets/svg/icon-document.svg" alt="File Icon">
+                        <div class="document-details">
+                            <span class="document-date">01 April 2022</span>
+                            <span class="document-filename">untitled-document.md</span>
+                        </div>
+                    </li>
+                    <li class="document-item">
+                        <img class="document-icon" src="assets/svg/icon-document.svg" alt="File Icon">
+                        <div class="document-details">
+                            <span class="document-date">01 April 2022</span>
+                            <span class="document-filename">welcome.md</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="theme">
+                    <div class="theme-switcher">
+                        <img src="assets/svg/icon-dark-mode.svg" class="dark-icon active-theme" alt="Moon Icon" onload="SVGInject(this)">
+                        <label class="switcher">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+
+                        <img src="assets/svg/icon-light-mode.svg" class="light-icon" alt="Sun Icon" onload="SVGInject(this)">
                     </div>
-                </li>
-                <li class="document-item">
-                    <img class="document-icon" src="assets/svg/icon-document.svg" alt="File Icon">
-                    <div class="document-details">
-                        <span class="document-date">01 April 2022</span>
-                        <span class="document-filename">welcome.md</span>
-                    </div>
-                </li>
-            </ul>
-
-            <div class="theme">
-                <div class="theme-switcher">
-                    <img src="assets/svg/icon-dark-mode.svg" class="dark-icon active-theme" alt="Moon Icon" onload="SVGInject(this)">
-                    <label class="switcher">
-                        <input type="checkbox">
-                        <span class="slider"></span>
-                    </label>
-
-                    <img src="assets/svg/icon-light-mode.svg" class="light-icon" alt="Sun Icon" onload="SVGInject(this)">
                 </div>
             </div>
         </aside>
 
         <main class="editor ">
-            <div class="editor-content">
+            <div class="editor-content flex flex-column">
                 <div class="editor-heading flex align-center border-right space-between">
                     <h2 class="editor-title">Markdown</h2>
 
@@ -108,7 +110,7 @@
                 <textarea class="markdown-content border-right" spellcheck="false "></textarea>
             </div>
 
-            <div class="editor-preview ">
+            <div class="editor-preview flex flex-column">
                 <div class="editor-heading flex align-center space-between ">
                     <h2 class="editor-title ">Preview</h2>
                     <button class="btn show-btn ">
