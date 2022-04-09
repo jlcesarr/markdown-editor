@@ -18,6 +18,11 @@
         "webpack": "^5.72.0",
         "webpack-stream": "^7.0.0"
     },
-    "dependencies": {},
-    "browserslist": ["last 4 versions"]
+    "dependencies": {
+        "highlight.js": "^11.5.0",
+        "markdown-it": "^12.3.2"
+    },
+    "browserslist": [
+        "last 4 versions"
+    ]
 }

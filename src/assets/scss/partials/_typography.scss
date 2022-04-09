@@ -53,7 +53,7 @@ sans-serif;
     font-family: $font-family-2;
     line-height: 24px;
     font-size: 14px;
-    @if($bold !=0) {
+    @if($bold!=0) {
         font-weight: bold;
     }
 }

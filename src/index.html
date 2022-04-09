@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <meta name="author" content="Júlio César">
+    <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Frontend Mentor | In-browser markdown editor</title>
+    <script src="assets/js/scripts/svg-inject.min.js "></script>
+    <title>Markdown editor</title>
 </head>
 
 <body>
@@ -18,7 +22,7 @@
         <header class="header">
             <div class="header-container flex align-center space-between">
                 <div class="header-item flex align-center">
-                    <div class="menu-button"></div>
+                    <div class="menu-btn"></div>
                     <figure class="menu-icon">
                         <img class="menu-open" src="assets/svg/icon-menu.svg" alt="Close Icon" onload="SVGInject(this)" />
                         <img class="menu-close" src="assets/svg/icon-close.svg" alt="Close Icon" onload="SVGInject(this)" />
@@ -78,51 +82,63 @@
 
             <div class="theme">
                 <div class="theme-switcher">
-                    <img src="assets/svg/icon-light-mode.svg" alt="">
+                    <img src="assets/svg/icon-dark-mode.svg" class="dark-icon active-theme" alt="Moon Icon" onload="SVGInject(this)">
                     <label class="switcher">
                         <input type="checkbox">
                         <span class="slider"></span>
                     </label>
-                    <img src="assets/svg/icon-dark-mode.svg" alt="">
+
+                    <img src="assets/svg/icon-light-mode.svg" class="light-icon" alt="Sun Icon" onload="SVGInject(this)">
                 </div>
             </div>
         </aside>
 
         <main class="editor ">
             <div class="editor-content">
-                <div class="editor-heading flex align-center border-right">
+                <div class="editor-heading flex align-center border-right space-between">
                     <h2 class="editor-title">Markdown</h2>
+
+                    <label class="markdown-toggle switcher">
+                        <input type="checkbox" checked="true" />
+                        <span class="slider"></span>
+                    </label>
                 </div>
-                <textarea class="markdown-content" spellcheck="false"></textarea>
+
+
+                <textarea class="markdown-content border-right" spellcheck="false "></textarea>
             </div>
 
-            <div class="editor-preview">
-                <div class="editor-heading flex align-center space-between">
-                    <h2 class="editor-title">Preview</h2>
-                    <button class="btn show-btn">
-                        <img src="assets/svg/icon-show-preview.svg" onload="SVGInject(this)" alt="">
+            <div class="editor-preview ">
+                <div class="editor-heading flex align-center space-between ">
+                    <h2 class="editor-title ">Preview</h2>
+                    <button class="btn show-btn ">
+                        <img src="assets/svg/icon-show-preview.svg " onload="SVGInject(this) " alt="Preview Icon">
                     </button>
                 </div>
-                <div class="markdown-preview">
+                <div class="markdown-preview ">
                     <!-- INJECT PARSED MARKDOWN HERE -->
                 </div>
             </div>
         </main>
     </div>
 
-    <div class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-title">Delete this document?</div>
+    <div class="modal-overlay ">
+        <div class="modal-content ">
+            <div class="modal-title ">Delete this document?</div>
 
-            <p class="modal-message">Are you sure you want to delete ‘welcome.md’ document and its contents? This action cannot be reversed.</p>
+            <p class="modal-message ">Are you sure you want to delete ‘<span class="document-current ">welcome.md</span>’ document and its contents? This action cannot be reversed.</p>
 
-            <button class="btn close-modal-btn">Confirm & Delete</button>
+            <button class="btn close-modal-btn ">Confirm & Delete</button>
         </div>
     </div>
 
 
-    <script src="assets/js/scripts/svg-inject.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- TO TOP ELEMENT -->
+    <div class="to-top">
+
+    </div>
+
+    <script defer src="assets/js/main.js "></script>
 </body>
 
 </html>

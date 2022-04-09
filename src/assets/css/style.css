@@ -34,6 +34,124 @@
   justify-content: space-between;
 }
 
+/*!
+  Theme: Default
+  Description: Original highlight.js style
+  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+  Maintainer: @highlightjs/core-team
+  Website: https://highlightjs.org/
+  License: see project LICENSE
+  Touched: 2021
+*/
+/* line 11, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+/* line 17, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+code.hljs {
+  padding: 3px 5px;
+}
+
+/* line 21, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs {
+  background: #f3f3f3;
+  color: #444;
+}
+
+/* line 26, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-comment {
+  color: #697070;
+}
+
+/* line 30, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-punctuation,
+.hljs-tag {
+  color: #444a;
+}
+
+/* line 35, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-tag .hljs-attr,
+.hljs-tag .hljs-name {
+  color: #444;
+}
+
+/* line 40, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-attribute,
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-name,
+.hljs-selector-tag {
+  font-weight: 700;
+}
+
+/* line 49, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-deletion,
+.hljs-number,
+.hljs-quote,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-string,
+.hljs-template-tag,
+.hljs-type {
+  color: #800;
+}
+
+/* line 60, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-section,
+.hljs-title {
+  color: #800;
+  font-weight: 700;
+}
+
+/* line 66, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-link,
+.hljs-operator,
+.hljs-regexp,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-symbol,
+.hljs-template-variable,
+.hljs-variable {
+  color: #ab5656;
+}
+
+/* line 77, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-literal {
+  color: #695;
+}
+
+/* line 81, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-addition,
+.hljs-built_in,
+.hljs-bullet,
+.hljs-code {
+  color: #397300;
+}
+
+/* line 88, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-meta {
+  color: #1f7199;
+}
+
+/* line 92, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-meta .hljs-string {
+  color: #38a;
+}
+
+/* line 96, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-emphasis {
+  font-style: italic;
+}
+
+/* line 100, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_syntaxHighlighter.scss */
+.hljs-strong {
+  font-weight: 700;
+}
+
 /* line 5, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .grid-wrapper {
   display: grid;
@@ -94,7 +212,7 @@
 }
 
 /* line 45, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
-.header .menu-button {
+.header .menu-btn {
   background-color: #35393F;
   display: block;
   position: absolute;
@@ -107,7 +225,7 @@
 }
 
 /* line 53, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
-.header .menu-button:hover {
+.header .menu-btn:hover {
   background-color: #f39765;
 }
 
@@ -195,36 +313,49 @@
 .editor {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 50vw;
   grid-template-rows: 1fr;
   -ms-flex-line-pack: start;
   align-content: start;
+  background-color: #151619;
 }
 
-/* line 135, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 136, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .editor.preview-mode {
   grid-template-columns: 1fr;
 }
 
-/* line 137, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 138, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .editor.preview-mode .editor-content {
   display: none;
 }
 
-/* line 143, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
-.editor-content,
-.editor-preview {
-  background-color: #151619;
+/* line 144, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.editor-content {
+  min-height: 100%;
+  overflow-y: scroll;
 }
 
-/* line 148, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 154, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .editor-heading {
   padding: 8px 0;
   height: 42px;
   background-color: #1d1f22;
+  position: sticky;
+  inset: 0;
 }
 
-/* line 152, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 160, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.editor-heading .markdown-toggle {
+  margin-right: 16px;
+}
+
+/* line 163, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.editor-heading input[type="checkbox"]:checked + .slider {
+  background-color: green;
+}
+
+/* line 166, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .editor-heading .editor-title {
   font-family: "Roboto", sans-serif;
   font-size: 13px;
@@ -234,15 +365,15 @@
   color: #c1c4cb;
 }
 
-/* line 158, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
-.editor-heading.border-right {
+/* line 174, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.border-right {
   border-right: 1px solid #5a6069;
 }
 
-/* line 163, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 178, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 textarea.markdown-content {
   width: 100%;
-  height: 90%;
+  height: 100%;
   outline: none;
   overflow-y: auto;
   background-color: inherit;
@@ -257,14 +388,15 @@ textarea.markdown-content {
   font-size: 14px;
 }
 
-/* line 178, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 193, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 div.markdown-preview {
-  height: 90%;
+  min-height: 100%;
   width: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
+  padding: 8px;
 }
 
-/* line 185, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 201, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .sidebar {
   background-color: #1d1f22;
   padding: 16px;
@@ -274,7 +406,7 @@ div.markdown-preview {
   flex-direction: column;
 }
 
-/* line 189, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 205, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .sidebar .sidebar-title {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
@@ -283,12 +415,12 @@ div.markdown-preview {
   margin-bottom: 32px;
 }
 
-/* line 195, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 211, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .sidebar .new-btn {
   margin-bottom: 24px;
 }
 
-/* line 201, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 217, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -299,22 +431,22 @@ div.markdown-preview {
   margin-bottom: 24px;
 }
 
-/* line 205, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 221, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item img {
   margin-right: 16px;
 }
 
-/* line 209, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 225, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item .document-details span {
   display: block;
 }
 
-/* line 212, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 228, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item .document-details .document-date {
   color: #7c8187;
 }
 
-/* line 215, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 231, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item .document-details .document-filename {
   color: #FFF;
   cursor: pointer;
@@ -323,12 +455,79 @@ div.markdown-preview {
   transition: .3s ease;
 }
 
-/* line 219, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+/* line 235, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
 .documents-list li.document-item .document-details .document-filename:hover {
   color: #e46643;
 }
 
-/* line 2, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 244, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.markdown-preview {
+  color: #FFF;
+}
+
+/* line 246, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.markdown-preview p {
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 24px;
+  font-size: 14px;
+  color: #c1c4cb;
+}
+
+/* line 250, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.markdown-preview h1 {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* line 253, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.markdown-preview h2 {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 28px;
+  font-weight: lighter;
+}
+
+/* line 256, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.markdown-preview h3 {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* line 259, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.markdown-preview h4 {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* line 262, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.markdown-preview h5 {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* line 265, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.markdown-preview h6 {
+  color: #e46643 !important;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #e46643;
+}
+
+/* line 269, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_layout.scss */
+.markdown-preview strong,
+.markdown-preview b {
+  color: #c1c4cb;
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* line 1, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .theme {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -341,7 +540,7 @@ div.markdown-preview {
   align-items: flex-end;
 }
 
-/* line 8, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 7, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .theme-switcher {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -352,7 +551,7 @@ div.markdown-preview {
   gap: 18px;
 }
 
-/* line 14, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 13, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .switcher {
   position: relative;
   display: inline-block;
@@ -360,21 +559,21 @@ div.markdown-preview {
   height: 24px;
 }
 
-/* line 19, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 18, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .switcher input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* line 25, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 24, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .switcher input:checked + .slider::before {
   -webkit-transform: translate(28px, -50%);
   -ms-transform: translate(28px, -50%);
   transform: translate(28px, -50%);
 }
 
-/* line 31, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 30, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .switcher .slider {
   position: absolute;
   cursor: pointer;
@@ -386,7 +585,7 @@ div.markdown-preview {
   border-radius: 14px;
 }
 
-/* line 38, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+/* line 37, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
 .switcher .slider::before {
   position: absolute;
   content: '';
@@ -402,6 +601,68 @@ div.markdown-preview {
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
+}
+
+/* line 53, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+body.light-theme .editor {
+  background-color: #FFF;
+}
+
+/* line 55, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+body.light-theme .editor .border-right {
+  border-right: 1px solid #e4e4e4 !important;
+}
+
+/* line 58, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+body.light-theme .editor .markdown-content {
+  color: #35393F;
+}
+
+/* line 63, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+body.light-theme .markdown-preview > * {
+  color: #35393F;
+}
+
+/* line 66, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+body.light-theme .markdown-preview p {
+  color: #7c8187;
+}
+
+/* line 69, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+body.light-theme .markdown-preview b,
+body.light-theme .markdown-preview strong {
+  color: #7c8187;
+}
+
+/* line 74, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+body.light-theme .editor-heading {
+  background-color: #f5f5f5;
+}
+
+/* line 76, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+body.light-theme .editor-heading .editor-title,
+body.light-theme .editor-heading svg {
+  color: #7c8187;
+}
+
+/* line 81, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+body.light-theme .modal-content {
+  background-color: #FFF;
+}
+
+/* line 83, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+body.light-theme .modal-content .modal-title {
+  color: #35393F;
+}
+
+/* line 86, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+body.light-theme .modal-content .modal-message {
+  color: #7c8187;
+}
+
+/* line 93, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_theme.scss */
+.active-theme path {
+  fill: white;
 }
 
 /* line 1, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
@@ -486,7 +747,7 @@ div.markdown-preview {
 
 /* line 57, ../../../../in-browser-markdown-editor/src/assets/scss/partials/_buttons.scss */
 .show-btn {
-  padding: 0 5px;
+  padding: 10px;
   background-color: transparent;
 }
 
@@ -554,7 +815,7 @@ div.markdown-preview {
   flex-direction: column;
   max-width: 348px;
   padding: 24px;
-  background-color: #1D1F22;
+  background-color: #1d1f22;
   border-radius: 4px;
 }
 
@@ -572,13 +833,13 @@ div.markdown-preview {
   font-size: 14px;
   font-weight: bold;
   color: #e46643;
-  color: #C1C4CB;
+  color: #c1c4cb;
   font-weight: lighter;
   margin-top: 32px;
   margin-bottom: 24px;
 }
 
-/* line 9, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
+/* line 10, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -586,18 +847,18 @@ div.markdown-preview {
   margin: 0;
 }
 
-/* line 15, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
+/* line 16, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
 .grid-wrapper {
   width: 100vw;
   height: 100vh;
 }
 
-/* line 20, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
+/* line 21, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
 img {
   display: block;
 }
 
-/* line 24, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
+/* line 25, ../../../../in-browser-markdown-editor/src/assets/scss/style.scss */
 ul,
 ol {
   list-style: none;

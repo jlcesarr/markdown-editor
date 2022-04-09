@@ -1,4 +1,3 @@
-// switcher button.switcher
 .theme {
     display: flex;
     flex: 1 1 0;
@@ -47,5 +46,51 @@
             top: 50%;
             transform: translate(0, -50%);
         }
+    }
+}
+
+body.light-theme {
+    .editor {
+        background-color: #FFF;
+        .border-right {
+            border-right: 1px solid $secondary-light !important;
+        }
+        .markdown-content {
+            color: $primary-light;
+        }
+    }
+    .markdown-preview {
+        &>* {
+            color: $primary-light;
+        }
+        p {
+            color: $secondary-dark;
+        }
+        b,
+        strong {
+            color: $secondary-dark;
+        }
+    }
+    .editor-heading {
+        background-color: $auxiliary-primary;
+        .editor-title,
+        svg {
+            color: $secondary-dark;
+        }
+    }
+    .modal-content {
+        background-color: $white;
+        .modal-title {
+            color: $primary-light;
+        }
+        .modal-message {
+            color: $secondary-dark;
+        }
+    }
+}
+
+.active-theme {
+    path {
+        fill: white;
     }
 }

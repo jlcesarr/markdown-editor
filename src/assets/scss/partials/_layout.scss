@@ -42,7 +42,7 @@ body {
     background-color: $primary-normal;
     padding: 22px;
     position: relative;
-    .menu-button {
+    .menu-btn {
         background-color: $primary-light;
         display: block;
         position: absolute;
@@ -89,7 +89,7 @@ body {
     width: 100%;
     max-height: 36px;
     .document-filename {
-        color: $auxiliary-secondary;
+        color: $white;
         display: block;
         border: none;
         caret-color: $auxiliary-quaternary;
@@ -101,7 +101,7 @@ body {
         &:active {
             outline: none;
             border: none;
-            border-bottom: 1px solid $auxiliary-secondary;
+            border-bottom: 1px solid $white;
         }
     }
 }
@@ -129,9 +129,10 @@ body {
 .editor {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 50vw;
     grid-template-rows: 1fr;
     align-content: start;
+    background-color: $primary-darkness;
     &.preview-mode {
         grid-template-columns: 1fr;
         .editor-content {
@@ -140,29 +141,43 @@ body {
     }
 }
 
+.editor-content {
+    min-height: 100%;
+    overflow-y: scroll;
+}
+
 .editor-content,
 .editor-preview {
-    background-color: $primary-darkness;
+    // background-color: $primary-darkness;
 }
 
 .editor-heading {
     padding: 8px 0;
     height: 42px;
     background-color: $primary-dark;
+    position: sticky;
+    inset: 0;
+    .markdown-toggle {
+        margin-right: 16px;
+    }
+    input[type="checkbox"]:checked+.slider {
+        background-color: green;
+    }
     .editor-title {
         @include typeface-regular(13);
         margin-left: 16px;
         text-transform: uppercase;
         color: $secondary-normal;
     }
-    &.border-right {
-        border-right: 1px solid $secondary-darkness;
-    }
+}
+
+.border-right {
+    border-right: 1px solid $secondary-darkness;
 }
 
 textarea.markdown-content {
     width: 100%;
-    height: 90%;
+    height: 100%;
     outline: none;
     overflow-y: auto;
     background-color: inherit;
@@ -176,9 +191,10 @@ textarea.markdown-content {
 }
 
 div.markdown-preview {
-    height: 90%;
+    min-height: 100%;
     width: 100%;
-    overflow-y: auto;
+    overflow-y: scroll;
+    padding: 8px;
 }
 
 // sidebar
@@ -213,7 +229,7 @@ div.markdown-preview {
                 color: $secondary-dark;
             }
             .document-filename {
-                color: $auxiliary-secondary;
+                color: $white;
                 cursor: pointer;
                 transition: .3s ease;
                 &:hover {
@@ -221,5 +237,38 @@ div.markdown-preview {
                 }
             }
         }
+    }
+}
+
+// PREVIEW
+.markdown-preview {
+    color: $white;
+    p {
+        @include typeface-paragraph();
+        color: $secondary-normal;
+    }
+    h1 {
+        @include typeface-slab(32);
+    }
+    h2 {
+        @include typeface-slab(28);
+    }
+    h3 {
+        @include typeface-slab(24);
+    }
+    h4 {
+        @include typeface-slab(20);
+    }
+    h5 {
+        @include typeface-slab(16);
+    }
+    h6 {
+        color: $auxiliary-tertiary !important;
+        @include typeface-slab(14);
+    }
+    strong,
+    b {
+        color: $secondary-normal;
+        @include typeface-paragraph(1);
     }
 }
