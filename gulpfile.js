@@ -3,6 +3,7 @@ import autoprefixer from 'gulp-autoprefixer'
 import webpack from 'webpack-stream';
 import concat from 'gulp-concat';
 import browserSync from 'browser-sync';
+import webpackConfig from './webpack.config.js'
 
 const liveBrowserSync = browserSync.create()
 
@@ -26,7 +27,7 @@ function concatJS() {
 
 function bundleJS() {
     return gulp.src('src/assets/js/main.js')
-        .pipe(webpack())
+        .pipe(webpack(webpackConfig))
         .pipe(liveBrowserSync.stream())
         .pipe(gulp.dest('src/assets/js/'))
 }
@@ -49,5 +50,12 @@ function observers() {
     gulp.watch('src/*.html').on('change', liveBrowserSync.reload)
     return;
 }
+
+function buildProduction() {
+    return gulp.src(['src/assets/css/style.css', 'src/assets/js/main.js', 'src/assets/svg/*.svg'])
+        .pipe(gulp.dest('./build/static/'))
+}
+
+gulp.task('build', gulp.series('autoPrefix', 'loadJS', buildProduction))
 
 gulp.task('default', gulp.parallel('liveBrowser', observers))
