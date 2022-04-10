@@ -88,8 +88,11 @@ body.light-theme {
     }
 }
 
-.active-theme {
-    path {
-        fill: white;
+.light-icon,
+.dark-icon {
+    &.active-theme {
+        path {
+            fill: white;
+        }
     }
 }

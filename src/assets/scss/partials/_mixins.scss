@@ -1,0 +1,20 @@
+$container-l: 1200px;
+$container-m: 768px;
+$container-s: 540px;
+@mixin responsive($device) {
+    @if($device==large) {
+        @media screen and (min-width: $container-l) {
+            @content;
+        }
+    }
+    @else if($device==medium) {
+        @media screen and (min-width: $container-m) and (max-width: ($container-l - 1)) {
+            @content;
+        }
+    }
+    @else if($device==small) {
+        @media screen and (max-width: $container-s) {
+            @content;
+        }
+    }
+}

@@ -17,11 +17,11 @@ body {
         grid-area: editor;
     }
     &.menu-active {
+        grid-template-columns: 250px 1fr;
+        grid-template-areas: 'aside header' 'aside editor';
         .sidebar {
             display: flex;
         }
-        grid-template-columns: 250px 1fr;
-        grid-template-areas: 'aside header' 'aside editor';
         .menu-icon {
             .menu-open {
                 display: none;
@@ -33,6 +33,18 @@ body {
         .save-btn,
         .delete-btn {
             display: none;
+        }
+        @include responsive(small) {
+            overflow-x: hidden;
+            grid-template-columns: 210px 1fr;
+            .editor:not(.preview-mode) {
+                .editor-preview {
+                    display: none;
+                }
+                .editor-content {
+                    grid-column: span 2;
+                }
+            }
         }
     }
 }
@@ -52,6 +64,12 @@ body {
         transition: .3s ease;
         &:hover {
             background-color: $auxiliary-quaternary
+        }
+    }
+    .header-logo {
+        display: none;
+        @include responsive(large) {
+            display: block;
         }
     }
 }
@@ -76,7 +94,15 @@ body {
         background-color: $secondary-darkness;
         margin-left: 24px;
         margin-right: 24px;
-        display: inline-block;
+        display: none;
+        @include responsive(large) {
+            display: inline-block;
+        }
+    }
+    @include responsive(small) {
+        .document-name {
+            display: none;
+        }
     }
     .document-icon {
         margin-right: 16px;
@@ -129,7 +155,7 @@ body {
 .editor {
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 50vw;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     align-content: start;
     background-color: $primary-darkness;
@@ -137,6 +163,9 @@ body {
         grid-template-columns: 1fr;
         .editor-content {
             display: none;
+        }
+        .markdown-preview {
+            padding: 16px
         }
     }
 }
@@ -192,6 +221,9 @@ div.markdown-preview {
     width: 100%;
     overflow-y: scroll;
     padding: 8px;
+    & * {
+        max-width: 100% !important; // prevents overflow x
+    }
 }
 
 // sidebar
@@ -271,5 +303,34 @@ div.markdown-preview {
     b {
         color: $secondary-normal;
         @include typeface-paragraph(1);
+    }
+}
+
+// TO TOP BUTTON
+.to-top-btn {
+    position: fixed;
+    cursor: pointer;
+    pointer-events: all;
+    right: 18px;
+    z-index: 999;
+    bottom: 18px;
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.014), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.02), 12.5px 12.5px 10px rgba(0, 0, 0, 0.025), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.03), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.036), 100px 100px 80px rgba(0, 0, 0, 0.05);
+    background-color: $secondary-darkness;
+    width: 48px;
+    height: 48px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: .3s ease;
+    &:hover {
+        transform: translateY(-2px);
+    }
+    .arrow-icon {
+        transform: rotate(-90deg);
+        width: 32px;
+        pointer-events: none;
+        height: 32px;
     }
 }

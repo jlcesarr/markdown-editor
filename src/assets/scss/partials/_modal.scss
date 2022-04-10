@@ -15,6 +15,12 @@
 }
 
 .modal-content {
+    .modal-close {
+        align-self: flex-end;
+        background-color: $auxiliary-quaternary;
+        margin-bottom: 16px;
+        padding: 5px 10px;
+    }
     display: flex;
     flex-direction: column;
     max-width: 348px;

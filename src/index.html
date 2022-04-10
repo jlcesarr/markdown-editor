@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Júlio César">
     <meta name="robots" content="index, follow">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;700&family=Roboto:wght@300;400&display=swap">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;700&family=Roboto:wght@300;400&display=swap"></noscript>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/scripts/svg-inject.min.js "></script>
+    <script src="assets/js/svg-inject.min.js "></script>
     <title>Markdown editor</title>
 </head>
 
@@ -24,10 +22,10 @@
                 <div class="header-item flex align-center">
                     <div class="menu-btn"></div>
                     <figure class="menu-icon">
-                        <img class="menu-open" src="assets/svg/icon-menu.svg" alt="Close Icon" onload="SVGInject(this)" />
-                        <img class="menu-close" src="assets/svg/icon-close.svg" alt="Close Icon" onload="SVGInject(this)" />
+                        <img class="menu-open injectable" src="assets/svg/icon-menu.svg" alt="Close Icon" />
+                        <img class="menu-close injectable" src="assets/svg/icon-close.svg" alt="Close Icon" />
                     </figure>
-                    <img src="assets/svg/logo.svg" onload="SVGInject(this)" alt="Logo">
+                    <img src="assets/svg/logo.svg" class="header-logo injectable" alt="Logo">
 
 
 
@@ -44,12 +42,12 @@
 
                 <div class="document-actions flex align-center">
                     <button class="btn delete-btn">
-                    <img src="assets/svg/icon-delete.svg" onload="SVGInject(this)" alt="">
+                    <img src="assets/svg/icon-delete.svg " class="injectable" alt="">
 
                     </button>
                     <button class="btn save-btn">
-                        <img class="save-icon" src="assets/svg/icon-save.svg" >
-                        Save Changes
+                        <img class="save-icon" alt="Save Icon" src="assets/svg/icon-save.svg" >
+                        <span class="cta-text">Save Changes</span>
                     </button>
                 </div>
             </div>
@@ -76,20 +74,19 @@
                         <img class="document-icon" src="assets/svg/icon-document.svg" alt="File Icon">
                         <div class="document-details">
                             <span class="document-date">01 April 2022</span>
-                            <span class="document-filename">welcome.md</span>
+                            <span class="document-filename" tabindex="1">welcome.md</span>
                         </div>
                     </li>
                 </ul>
 
                 <div class="theme">
                     <div class="theme-switcher">
-                        <img src="assets/svg/icon-dark-mode.svg" class="dark-icon active-theme" alt="Moon Icon" onload="SVGInject(this)">
+                        <img src="assets/svg/icon-dark-mode.svg" class="dark-icon active-theme injectable" alt="Moon Icon">
                         <label class="switcher">
                             <input type="checkbox">
                             <span class="slider"></span>
                         </label>
-
-                        <img src="assets/svg/icon-light-mode.svg" class="light-icon" alt="Sun Icon" onload="SVGInject(this)">
+                        <img src="assets/svg/icon-light-mode.svg" class="light-icon injectable" alt="Sun Icon">
                     </div>
                 </div>
             </div>
@@ -100,21 +97,22 @@
                 <div class="editor-heading flex align-center border-right space-between">
                     <h2 class="editor-title">Markdown</h2>
 
-                    <label class="markdown-toggle switcher">
+                    <label class="markdown-toggle switcher" tabindex="2">
                         <input type="checkbox" checked="true" />
                         <span class="slider"></span>
                     </label>
                 </div>
 
 
-                <textarea class="markdown-content border-right" spellcheck="false "></textarea>
+                <textarea class="markdown-content border-right" spellcheck="false " tabindex="3"></textarea>
             </div>
 
             <div class="editor-preview flex flex-column">
                 <div class="editor-heading flex align-center space-between ">
                     <h2 class="editor-title ">Preview</h2>
-                    <button class="btn show-btn ">
-                        <img src="assets/svg/icon-show-preview.svg " onload="SVGInject(this) " alt="Preview Icon">
+                    <button class="btn show-btn " tabindex="-1">
+                        <img src="assets/svg/icon-show-preview.svg" class="show-preview-icon is-active injectable"  alt="Preview Icon">
+                        <img src="assets/svg/icon-hide-preview.svg" class="hide-preview-icon injectable" alt="Preview Icon">
                     </button>
                 </div>
                 <div class="markdown-preview ">
@@ -124,12 +122,14 @@
         </main>
     </div>
 
-    <div class="modal-overlay ">
-        <div class="modal-content ">
-            <div class="modal-title ">Delete this document?</div>
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <button class="btn modal-close">
+                X
+            </button>
 
-            <p class="modal-message ">Are you sure you want to delete ‘<span class="document-current ">welcome.md</span>’ document and its contents? This action cannot be reversed.</p>
-
+            <div class="modal-title">Delete this document?</div>
+            <p class="modal-message">Are you sure you want to delete ‘<span class="document-current ">welcome.md</span>’ document and its contents? This action cannot be reversed.</p>
             <button class="btn close-modal-btn ">Confirm & Delete</button>
         </div>
     </div>
@@ -137,10 +137,15 @@
 
     <!-- TO TOP ELEMENT -->
     <div class="to-top">
-
+        <button class="to-top-btn">
+            <img src="assets/svg/arrow-icon.png" class="arrow-icon" alt="Arrow Icon">
+        </button>
     </div>
 
-    <script defer src="assets/js/main.js "></script>
+    <script defer>
+        SVGInject(document.querySelectorAll('img.injectable'), {})
+    </script>
+    <script defer src="assets/js/main.js"></script>
 </body>
 
 </html>

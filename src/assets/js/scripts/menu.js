@@ -22,18 +22,22 @@
     const $deleteButton = document.querySelector('.delete-btn');
     const $fileName = document.querySelector('input.document-filename');
 
-    const $modalConfirm = document.querySelector('.modal-overlay');
-    const $fileNameModal = $modalConfirm.querySelector('.document-current');
-    const $confirmButton = $modalConfirm.querySelector('.close-modal-btn');
+    const $modalOverlay = document.querySelector('.modal-overlay');
+    const $fileNameModal = $modalOverlay.querySelector('.document-current');
+    const $closeModalButton = $modalOverlay.querySelector('.modal-close ')
+    const $confirmDeleteButton = $modalOverlay.querySelector('.close-modal-btn');
 
-    const handleDelete = (event) => {
+    const handleDeleteModal = (event) => {
         let currentFileName = $fileName.value;
 
         $fileNameModal.textContent = currentFileName;
 
-        $modalConfirm.classList.add('is-active');
+        $modalOverlay.classList.add('is-active');
     }
 
-    $deleteButton.addEventListener('click', handleDelete);
-    $confirmButton.addEventListener('click', () => $modalConfirm.classList.remove('is-active'))
+    $deleteButton.addEventListener('click', handleDeleteModal);
+
+    // DELETE THE CURRENT DOCUMENT
+    // $confirmDeleteButton.addEventListener('click', () => $modalOverlay.classList.remove('is-active'))
+    $closeModalButton.addEventListener('click', () => $modalOverlay.classList.remove('is-active'))
 }

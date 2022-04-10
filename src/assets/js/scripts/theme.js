@@ -1,35 +1,18 @@
 {
-    window.onload = () => {
-        let isLightTheme = false;
+    let isLightTheme = false;
 
-        const $themeSliderToggle = document.querySelector('.theme-switcher input[type="checkbox"]');
-        const $lightThemeIcon = document.querySelector('.light-icon');
-        const $darkThemeIcon = document.querySelector('.dark-icon');
-
-        console.log($themeSliderToggle)
+    const $themeSliderToggle = document.querySelector('.theme-switcher input[type="checkbox"]');
+    const $lightThemeIcon = document.querySelector('.light-icon');
+    const $darkThemeIcon = document.querySelector('.dark-icon');
 
 
-        const handleThemeChange = () => {
-            if ($themeSliderToggle.checked) {
-                isLightTheme = true;
+    const handleThemeChange = () => {
+        isLightTheme = !isLightTheme;
+        document.body.classList.toggle('light-theme');
 
-                document.body.classList.add('light-theme')
-
-
-                console.log($lightThemeIcon, $darkThemeIcon)
-
-
-                $lightThemeIcon.classList.add('active-theme')
-                $darkThemeIcon.classList.remove('active-theme')
-                return;
-            }
-
-            isLightTheme = false;
-            document.body.classList.remove('light-theme')
-            $lightThemeIcon.classList.remove('active-theme')
-            $darkThemeIcon.classList.add('active-theme')
-        }
-
-        $themeSliderToggle.addEventListener('change', handleThemeChange)
+        $lightThemeIcon.classList.toggle('active-theme')
+        $darkThemeIcon.classList.toggle('active-theme')
     }
+
+    $themeSliderToggle.addEventListener('change', handleThemeChange)
 }

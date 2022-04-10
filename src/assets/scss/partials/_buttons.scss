@@ -32,12 +32,24 @@
     &:hover {
         background-color: transparentize($auxiliary-quaternary, .3)
     }
-    min-width: 152px;
+    // min-width: 152px;
     font-weight: bolder;
     display: flex;
     align-items: center;
     .save-icon {
-        margin-right: 8px;
+        margin-right: 0px;
+    }
+    .cta-text {
+        display: none;
+    }
+    @include responsive(large) {
+        min-width: 152px;
+        .save-icon {
+            margin-right: 8px;
+        }
+        .cta-text {
+            display: block;
+        }
     }
 }
 
@@ -63,6 +75,13 @@
     &:hover {
         path {
             fill: $auxiliary-tertiary;
+        }
+    }
+    .show-preview-icon,
+    .hide-preview-icon {
+        display: none;
+        &.is-active {
+            display: block;
         }
     }
 }

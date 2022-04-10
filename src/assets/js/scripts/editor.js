@@ -3,14 +3,20 @@ import highlight from 'highlight.js';
 
 
 {
-
+    // PREVIEW MODE
     const $previewModeToggle = document.querySelector('.show-btn')
     const $editorContainer = document.querySelector('.editor')
+    const $showPreviewIcon = document.querySelector('.show-preview-icon')
+    const $hidePreviewIcon = document.querySelector('.hide-preview-icon')
 
 
     let isPreviewMode = false;
     $previewModeToggle.addEventListener('click', () => {
         isPreviewMode = !isPreviewMode;
+        console.log($showPreviewIcon, $hidePreviewIcon)
+
+        $showPreviewIcon.classList.toggle('is-active');
+        $hidePreviewIcon.classList.toggle('is-active');
 
         $editorContainer.classList.toggle('preview-mode')
     })
@@ -47,4 +53,19 @@ import highlight from 'highlight.js';
         $outputArea.innerHTML = inputValue;
     })
 
+}
+
+{
+    // TO TOP BUTTON
+    const $topScrollButton = document.querySelector('.to-top-btn');
+
+
+    const scrollToTop = () => {
+        console.log(window)
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
+    $topScrollButton.addEventListener('click', scrollToTop);
 }
