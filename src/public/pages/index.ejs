@@ -9,8 +9,8 @@
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;700&family=Roboto:wght@300;400&display=swap">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@300;700&family=Roboto:wght@300;400&display=swap"></noscript>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/svg-inject.min.js "></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/svg-inject.min.js "></script>
     <title>Markdown editor</title>
 </head>
 
@@ -22,15 +22,15 @@
                 <div class="header-item flex align-center">
                     <div class="menu-btn"></div>
                     <figure class="menu-icon">
-                        <img class="menu-open injectable" src="assets/svg/icon-menu.svg" alt="Close Icon" />
-                        <img class="menu-close injectable" src="assets/svg/icon-close.svg" alt="Close Icon" />
+                        <img class="menu-open injectable" src="../static/svg/icon-menu.svg" alt="Close Icon" />
+                        <img class="menu-close injectable" src="../static/svg/icon-close.svg" alt="Close Icon" />
                     </figure>
-                    <img src="assets/svg/logo.svg" class="header-logo injectable" alt="Logo">
+                    <img src="../static/svg/logo.svg" class="header-logo injectable" alt="Logo">
 
 
 
                     <div class="document flex align-center">
-                        <img class="document-icon" src="assets/svg/icon-document.svg" alt="File Icon">
+                        <img class="document-icon" src="../static/svg/icon-document.svg" alt="File Icon">
 
                         <div class="document-info">
                             <span class="document-name">Document Name</span>
@@ -42,11 +42,11 @@
 
                 <div class="document-actions flex align-center">
                     <button class="btn delete-btn">
-                    <img src="assets/svg/icon-delete.svg " class="injectable" alt="">
+                    <img src="../static/svg/icon-delete.svg " class="injectable" alt="">
 
                     </button>
                     <button class="btn save-btn">
-                        <img class="save-icon" alt="Save Icon" src="assets/svg/icon-save.svg" >
+                        <img class="save-icon" alt="Save Icon" src="../static/svg/icon-save.svg" >
                         <span class="cta-text">Save Changes</span>
                     </button>
                 </div>
@@ -64,14 +64,14 @@
 
                 <ul class="documents-list flex flex-column">
                     <li class="document-item">
-                        <img class="document-icon" src="assets/svg/icon-document.svg" alt="File Icon">
+                        <img class="document-icon" src="../static/svg/icon-document.svg" alt="File Icon">
                         <div class="document-details">
                             <span class="document-date">01 April 2022</span>
                             <span class="document-filename">untitled-document.md</span>
                         </div>
                     </li>
                     <li class="document-item">
-                        <img class="document-icon" src="assets/svg/icon-document.svg" alt="File Icon">
+                        <img class="document-icon" src="../static/svg/icon-document.svg" alt="File Icon">
                         <div class="document-details">
                             <span class="document-date">01 April 2022</span>
                             <span class="document-filename" tabindex="1">welcome.md</span>
@@ -81,12 +81,12 @@
 
                 <div class="theme">
                     <div class="theme-switcher">
-                        <img src="assets/svg/icon-dark-mode.svg" class="dark-icon active-theme injectable" alt="Moon Icon">
+                        <img src="../static/svg/icon-dark-mode.svg" class="dark-icon active-theme injectable" alt="Moon Icon">
                         <label class="switcher">
                             <input type="checkbox">
                             <span class="slider"></span>
                         </label>
-                        <img src="assets/svg/icon-light-mode.svg" class="light-icon injectable" alt="Sun Icon">
+                        <img src="../static/svg/icon-light-mode.svg" class="light-icon injectable" alt="Sun Icon">
                     </div>
                 </div>
             </div>
@@ -111,8 +111,8 @@
                 <div class="editor-heading flex align-center space-between ">
                     <h2 class="editor-title ">Preview</h2>
                     <button class="btn show-btn " tabindex="-1">
-                        <img src="assets/svg/icon-show-preview.svg" class="show-preview-icon is-active injectable"  alt="Preview Icon">
-                        <img src="assets/svg/icon-hide-preview.svg" class="hide-preview-icon injectable" alt="Preview Icon">
+                        <img src="../static/svg/icon-show-preview.svg" class="show-preview-icon is-active injectable"  alt="Preview Icon">
+                        <img src="../static/svg/icon-hide-preview.svg" class="hide-preview-icon injectable" alt="Preview Icon">
                     </button>
                 </div>
                 <div class="markdown-preview ">
@@ -138,14 +138,14 @@
     <!-- TO TOP ELEMENT -->
     <div class="to-top">
         <button class="to-top-btn">
-            <img src="assets/svg/arrow-icon.png" class="arrow-icon" alt="Arrow Icon">
+            <img src="../static/svg/arrow-icon.png" class="arrow-icon" alt="Arrow Icon">
         </button>
     </div>
 
     <script defer>
         SVGInject(document.querySelectorAll('img.injectable'), {})
     </script>
-    <script defer src="assets/js/main.js"></script>
+    <script defer src="../static/js/main.js"></script>
 </body>
 
 </html>

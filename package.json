@@ -5,7 +5,8 @@
     "type": "module",
     "author": "Júlio César <74342193+jlcesarr@users.noreply.github.com>",
     "scripts": {
-        "gulp": "node_modules/gulp-cli/bin/gulp.js"
+        "gulp": "node_modules/gulp-cli/bin/gulp.js",
+        "start": "nodemon ./src/app.js"
     },
     "license": "MIT",
     "devDependencies": {
@@ -14,11 +15,14 @@
         "gulp-autoprefixer": "^8.0.0",
         "gulp-cli": "^2.3.0",
         "gulp-concat": "^2.6.1",
+        "nodemon": "^2.0.15",
         "svgo": "^2.8.0",
         "webpack": "^5.72.0",
         "webpack-stream": "^7.0.0"
     },
     "dependencies": {
+        "ejs": "^3.1.6",
+        "express": "^4.17.3",
         "highlight.js": "^11.5.0",
         "markdown-it": "^12.3.2"
     },
