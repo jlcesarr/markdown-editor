@@ -1,0 +1,11 @@
+services:
+  database:
+    container_name: markdown_database
+    image: postgres:latest
+    ports: 
+      - "5437:5432"
+    environment:
+      POSTGRES_USER: markdown
+      POSTGRES_PASSWORD: markdown
+      POSTGRES_DB: markdown_api
+      
